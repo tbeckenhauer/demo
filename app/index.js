@@ -40,6 +40,11 @@ angular
         controller: 'carController',
         controllerAs: 'car'
       })
+      .when('/blog',{
+        redirectTo: function() {
+          window.location = 'https://soft-wa.re/'
+        }
+      })
       .when('/',{
         redirectTo: '/game'
       });
