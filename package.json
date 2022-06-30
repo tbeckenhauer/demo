@@ -30,7 +30,7 @@
     "jasmine-core": "^3.1.0",
     "jit-grunt": "0.10.x",
     "jshint-stylish": "2.2.x",
-    "karma": "2.0.x",
+    "karma": "6.3.x",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.1",
     "serve-static": "1.13.x",
