@@ -28,8 +28,6 @@ This is readme is not intended to be exhaustive, but simply to illustrate the mo
 `git clone <path-to-project>`
 `cd <path-to-project>`
 `npm install`
-`npm install --location=global bower`
-`npm install --location=global grunt`
 `bower install`
 `grunt serve`
 
