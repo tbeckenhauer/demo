@@ -88,7 +88,7 @@ module.exports = function (grunt) {
                 serveStatic('./bower_components')
               ),
               connect().use(
-                '/app',
+                '/demo/app',
                 serveStatic('./app')
               ),
               serveStatic(appConfig.app)
