@@ -20,9 +20,6 @@ module.exports = function (grunt) {
   });
 
   var serveStatic = require('serve-static');
-  // require('wiredep')({
-  // })
-
 
   // Configurable paths for the application
   var appConfig = {
@@ -211,7 +208,7 @@ module.exports = function (grunt) {
           fileExtension: {
             replace: {
               js: '<script src="../{{filePath}}"></script>',
-              css: '<link rel="stylesheet" href="../{{filePath}}">'
+              css: '<link rel="stylesheet" href="../{{filePath}}" />'
             }
           },
         }
