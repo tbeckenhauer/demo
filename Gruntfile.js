@@ -79,16 +79,16 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          open: true,
+          open: 'http://localhost:9000/demo/app',
           middleware: function (connect) {
             return [
               serveStatic('.tmp'),
               connect().use(
-                '/bower_components',
+                '/demo/bower_components',
                 serveStatic('./bower_components')
               ),
               connect().use(
-                '/app',
+                '/demo/app',
                 serveStatic('./app')
               ),
               serveStatic(appConfig.app)
@@ -203,7 +203,15 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath:  /\.\.\//,
+        fileTypes: {
+          fileExtension: {
+            replace: {
+              js: '<script src="../{{filePath}}"></script>',
+              css: '<link rel="stylesheet" href="../{{filePath}}" />'
+            }
+          },
+        }
       },
       test: {
         devDependencies: true,
