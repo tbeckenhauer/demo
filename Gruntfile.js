@@ -20,6 +20,9 @@ module.exports = function (grunt) {
   });
 
   var serveStatic = require('serve-static');
+  // require('wiredep')({
+  // })
+
 
   // Configurable paths for the application
   var appConfig = {
@@ -84,7 +87,7 @@ module.exports = function (grunt) {
             return [
               serveStatic('.tmp'),
               connect().use(
-                '/bower_components',
+                '/demo/bower_components',
                 serveStatic('./bower_components')
               ),
               connect().use(
@@ -203,7 +206,15 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//
+        ignorePath:  /\.\.\//,
+        fileTypes: {
+          fileExtension: {
+            replace: {
+              js: '<script src="../{{filePath}}"></script>',
+              css: '<link rel="stylesheet" href="../{{filePath}}">'
+            }
+          },
+        }
       },
       test: {
         devDependencies: true,
