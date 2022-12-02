@@ -79,7 +79,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         options: {
-          open: true,
+          open: 'http://localhost:9000/demo/app',
           middleware: function (connect) {
             return [
               serveStatic('.tmp'),
